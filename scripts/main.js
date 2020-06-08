@@ -96,7 +96,7 @@ setInterval(function () {
     }
     context.fill();
     context.fillStyle = 'red';
-    context.fillRect(snowball.points[0].x - 4, snowball.points[0].y - 4, 8, 8);
+    context.fillRect(snowball.position.x + snowball.radius * Math.cos(-snowball.rotation.angle), snowball.position.y - snowball.radius * Math.sin(-snowball.rotation.angle), 8, 8);
     if (canvas.width - snowball.radius * snowball.scale > snowball.position.x) {
         current_point.x += STEP * Math.cos(inclination);
         current_point.y += STEP * Math.sin(inclination);
